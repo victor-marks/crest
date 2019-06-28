@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grids</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="dropdown">
+      <button onclick="dropdown()" class="dropbtn">Dropdown</button>
+      <div id="myDropdown" class="dropdown-content">
+        <p id="box-number">0</p>
+        <p id="box-number">1</p>
+        <p id="box-number">2</p>
+        <p id="box-number">3</p>
+        <p id="box-number">4</p>
+        <p id="box-number">5</p>
+      </div>
+    </div>
+    <div class="boxes">
+      <button onclick="addBox()" class="dropbtn">Add Box</button>
+      <div id="boxes-container">
+        <div class="box">
+          <p>Box1</p>
+        </div>
+        <div class="box">
+          <p>Box2</p>
+        </div>
+        <div class="box">
+          <p>Box3</p>
+        </div>
+        <div class="box">
+          <p>Box4</p>
+        </div>
+        <div class="box">
+          <p>Box5</p>
+        </div>
+      </div>
+      <div id="box-number-show">
+        Boxes: 
+      </div>
+    </div>
+  </div>
+  <script src='app.js'></script>
+</body>
+</html>
