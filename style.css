@@ -51,18 +51,38 @@
   display: block;
 }
 
+/* Add box button */
+.addbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  font-size: 10px;
+  margin: 1rem;
+  cursor: pointer;
+}
+
 /* Box Styles */
-#boxes-container {
+.boxes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 50px);
+  grid-template-columns: repeat(auto-fit, 100px);
   grid-gap: 1rem;
 }
 
 .box {
   border: 1px solid red;
-}
-
-/* .box p {
+  display: flex;
   justify-content: center;
   align-content: center;
-} */
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.cancelbtn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+}

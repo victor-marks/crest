@@ -10,25 +10,36 @@ auto incremented index to visually identify the box added??
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 
-let boxesShown = [];
-
-function getIndex(idx) {
-  let index = boxesShown.indexOf(idx);
-  return index;
-}
+const boxContainer = document.querySelector('.boxes-container');
+let boxNumber = 1;
+let boxes;
+let boxesArr;
 
 function dropdown() {
   document.getElementById('myDropdown').classList.toggle('show');
 }
 
 function addBox(idx) {
-  let added = document.getElementById('boxes-container').appendChild('#box');
-  added.setAttribute('class', getIndex(idx));
+  console.log('adding box');
+  let newBox = document.createElement('div');
+  newBox.setAttribute('class', 'box');
+  newBox.setAttribute('id', `${boxNumber}`);
+  newBox.innerHTML = `
+    <button class="cancelbtn" onclick="removeBox()">X</button><p>${boxNumber}</p>
+    `;
+  boxContainer.appendChild(newBox);
+  boxNumber++;
 }
 
 function removeBox(idx) {
-  let removed = document.getElementById('boxes-container').removeChild('#box');
-  removed.parentNode.removeChild('#box'); // get id of box to remove
+  console.log('removing box');
+  boxes = document.querySelectorAll('box');
+  boxesArr = Array.from(boxes);
+  console.log(boxesArr);
+
+  // let boxes = document.getElementById('box');
+  // boxes.remove();
+  // boxesArr.filter(box => box.idx !== idx);
 }
 
 window.onclick = function(evt) {
@@ -47,7 +58,7 @@ window.onclick = function(evt) {
   let boxNumber = document.getElementById('box-number');
   boxNumber.onchange = function() {
     let boxes = document.getElementById('box-number').value;
-    console.log(boxes);
+    console.log('you selected: ', boxes);
     document.getElementById('box-number-show').innerHTML = 'You selected: ' + x;
   };
 };
