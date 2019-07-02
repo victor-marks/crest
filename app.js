@@ -11,9 +11,7 @@ auto incremented index to visually identify the box added??
 toggle between hiding and showing the dropdown content */
 
 const boxContainer = document.querySelector('.boxes-container');
-let boxNumber = 1;
-let boxes;
-let boxesArr;
+let boxNumber = 0;
 
 function dropdown() {
   document.getElementById('myDropdown').classList.toggle('show');
@@ -25,7 +23,7 @@ function addBox(idx) {
   newBox.setAttribute('class', 'box');
   newBox.setAttribute('id', `${boxNumber}`);
   newBox.innerHTML = `
-    <button class="cancelbtn" onclick="removeBox()">X</button><p>${boxNumber}</p>
+    <button class="cancelbtn" onclick="removeBox(${boxNumber})">X</button><p>${boxNumber}</p>
     `;
   boxContainer.appendChild(newBox);
   boxNumber++;
@@ -33,13 +31,8 @@ function addBox(idx) {
 
 function removeBox(idx) {
   console.log('removing box');
-  boxes = document.querySelectorAll('box');
-  boxesArr = Array.from(boxes);
-  console.log(boxesArr);
-
-  // let boxes = document.getElementById('box');
-  // boxes.remove();
-  // boxesArr.filter(box => box.idx !== idx);
+  let removeBox = document.getElementById(`${idx}`);
+  let removed = boxContainer.removeChild(removeBox);
 }
 
 window.onclick = function(evt) {
