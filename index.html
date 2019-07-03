@@ -4,23 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Grids</title>
+  <title>Fluid Grids</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="dropdown">
-    <select name="box-number" class="selection">
-      <option id="start-0-boxes" class="start-box" value="0">0</option>
-      <option id="start-1-boxes" class="start-box" value="1">1</option>
-      <option id="start-2-boxes" class="start-box" value="2">2</option>
-      <option id="start-3-boxes" class="start-box" value="3">3</option>
-      <option id="start-4-boxes" class="start-box" value="4">4</option>
-      <option id="start-5-boxes" class="start-box" value="5">5</option>
+  <div class="container">
+    <header>
+      <h2>Fluid Grid</h2>
+      <ul>
+        <li>Select a number from the dropdown menu to start with that many squares and then hit Create Grid.</li>
+        <li>Press Add Box to add to the beginning selection.</li>
+        <li>Click on the X to remove boxes or select 0 from the dropdown to remove all squares.</li>
+      </ul>
+    </header>
+    <select class="selection">
+      <option class="start-box" value="0">0</option>
+      <option class="start-box" value="1">1</option>
+      <option class="start-box" value="2">2</option>
+      <option class="start-box" value="3">3</option>
+      <option class="start-box" value="4">4</option>
+      <option class="start-box" value="5">5</option>
     </select>
-    <button class="drop-btn" onclick="startBox(event)">Create Grid</button>
-    <button onclick="addBox()" class="add-btn">Add Box</button>
+    <button class="btn" onclick="startBox(event)">Create Grid</button>
+    <button class="btn" onclick="addBox()">Add Box</button>
+    <div class="boxes-container"></div>
   </div>
-  <div class="boxes-container"></div>
   <script src='app.js'></script>
 </body>
 </html>

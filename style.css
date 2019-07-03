@@ -1,27 +1,37 @@
-/* Dropdown Button */
-.drop-btn {
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 2.5rem;
+}
+
+/* Header Styles */
+h2 {
+  width: 100%;
+  text-align: center;
+  margin: 1rem;
+  padding-bottom: 1rem;
+}
+ul {
+  padding-bottom: 1rem;
+}
+
+li {
+  margin: 0.5rem;
+}
+
+/* Dropdown/Add Buttons */
+.btn {
   background-color: #3498db;
   color: white;
   padding: 10px;
   font-size: 10px;
   margin: 1rem;
   cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.drop-btn:hover,
-.drop-btn:focus {
-  background-color: #2980b9;
-}
-
-/* Add box button */
-.add-btn {
-  background-color: #3498db;
-  color: white;
-  padding: 10px;
-  font-size: 10px;
-  margin: 1rem;
-  cursor: pointer;
+  padding-bottom: 1rem;
 }
 
 /* Box Styles */
@@ -29,13 +39,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 100px);
   grid-gap: 1rem;
+  padding-top: 1.5rem;
 }
 
 .box {
   border: 1px solid red;
   display: flex;
   justify-content: center;
-  align-content: center;
+  text-align: center;
   position: relative;
   width: 100px;
   height: 100px;
@@ -48,4 +59,12 @@
   position: absolute;
   height: 10px;
   width: 10px;
+  right: 0;
+}
+
+p {
+  position: absolute;
+  display: inline-block;
+  margin: 0 auto;
+  top: 40px;
 }
