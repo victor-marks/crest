@@ -1,20 +1,15 @@
-/*
--user select number of columns from dropdown -> 
-  create button (account for input of 0 cols)
--add box button: add only 1 box at a time?
--Also the box should display an
-auto incremented index to visually identify the box added??
--X button to remove the box: rearrange how?
-*/
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-
 const boxContainer = document.querySelector('.boxes-container');
 let boxNumber = 0;
 
-function dropdown() {
-  document.getElementById('myDropdown').classList.toggle('show');
+function startBox(evt) {
+  evt.preventDefault();
+  console.log('start box');
+  if (evt.target.matches('.start-box')) {
+    let selection = document.querySelector('.selection');
+    let startNumber = selection.options[selection.selectedIndex].value;
+    console.log('selection: ', selection);
+    console.log('start: ', startNumber);
+  }
 }
 
 function addBox(idx) {
@@ -23,8 +18,8 @@ function addBox(idx) {
   newBox.setAttribute('class', 'box');
   newBox.setAttribute('id', `${boxNumber}`);
   newBox.innerHTML = `
-    <button class="cancelbtn" onclick="removeBox(${boxNumber})">X</button><p>${boxNumber}</p>
-    `;
+    <button class="cancel-btn" onclick="removeBox(${boxNumber})">X</button><p>${boxNumber}</p>
+  `;
   boxContainer.appendChild(newBox);
   boxNumber++;
 }
@@ -34,24 +29,3 @@ function removeBox(idx) {
   let removeBox = document.getElementById(`${idx}`);
   let removed = boxContainer.removeChild(removeBox);
 }
-
-window.onclick = function(evt) {
-  // Close the dropdown menu if the user clicks outside of it
-  if (!evt.target.matches('.dropbtn')) {
-    let dropdown = document.getElementsByClassName('dropdown-content');
-    for (let i = 0; i < dropdown.length; i++) {
-      let openDropdown = dropdown[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-
-  // grab number from dropdown menu
-  let boxNumber = document.getElementById('box-number');
-  boxNumber.onchange = function() {
-    let boxes = document.getElementById('box-number').value;
-    console.log('you selected: ', boxes);
-    document.getElementById('box-number-show').innerHTML = 'You selected: ' + x;
-  };
-};

@@ -8,37 +8,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="dropdown">
-      <button onclick="dropdown()" class="dropbtn">Dropdown</button>
-      <div id="myDropdown" class="dropdown-content">
-        <p id="box-number">0</p>
-        <p id="box-number">1</p>
-        <p id="box-number">2</p>
-        <p id="box-number">3</p>
-        <p id="box-number">4</p>
-        <p id="box-number">5</p>
-      </div>
-      <button onclick="addBox()" class="addbtn">Add Box</button>
-    </div>
-    <div class="boxes-container">
-      <!-- <div id="box">
-        <p>Box1</p>
-      </div>
-      <div id="box">
-        <p>Box2</p>
-      </div>
-      <div id="box">
-        <p>Box3</p>
-      </div>
-      <div id="box">
-        <p>Box4</p>
-      </div>
-      <div id="box">
-        <p>Box5</p>
-      </div> -->
-    </div>
+  <div class="dropdown">
+    <form class="form">
+      <select name="box-number" class="selection">
+        <option id="start-0-boxes" class="start-box" value="0">0</option>
+        <option id="start-1-boxes" class="start-box" value="1">1</option>
+        <option id="start-2-boxes" class="start-box" value="2">2</option>
+        <option id="start-3-boxes" class="start-box" value="3">3</option>
+        <option id="start-4-boxes" class="start-box" value="4">4</option>
+        <option id="start-5-boxes" class="start-box" value="5">5</option>
+      </select>
+      <button onclick="startBox(evt)" class="drop-btn">Create Grid</button>
+    </form>
+    <button onclick="addBox()" class="add-btn">Add Box</button>
   </div>
+  <div class="boxes-container"></div>
   <script src='app.js'></script>
 </body>
 </html>
