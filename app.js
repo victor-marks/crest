@@ -4,11 +4,14 @@ let boxNumber = 0;
 function startBox(evt) {
   evt.preventDefault();
   console.log('start box');
-  if (evt.target.matches('.start-box')) {
-    let selection = document.querySelector('.selection');
-    let startNumber = selection.options[selection.selectedIndex].value;
-    console.log('selection: ', selection);
-    console.log('start: ', startNumber);
+  boxContainer.innerHTML = '';
+  let selection = document.querySelector('.selection');
+  let startNumber = selection.options[selection.selectedIndex].value;
+  console.log('selection: ', selection);
+  console.log('start: ', startNumber);
+  boxNumber = 0;
+  for (let i = 0; i < startNumber; i++) {
+    addBox(boxNumber);
   }
 }
 
